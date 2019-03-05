@@ -1,0 +1,46 @@
+
+CREATE DATABASE etl;
+
+USE etl;
+
+CREATE TABLE IF NOT EXISTS Country (
+    id INT NOT NULL AUTO_INCREMENT,
+    countryName VARCHAR(50) NOT NULL UNIQUE,
+    PRIMARY KEY (id)
+);
+
+CREATE TABLE IF NOT EXISTS State (
+    id INT NOT NULL AUTO_INCREMENT,
+    stateUF VARCHAR(5) NOT NULL UNIQUE,
+    countryID INT NOT NULL,
+    PRIMARY KEY (id),
+    FOREIGN KEY (countryID) REFERENCES Country(id)
+);
+
+CREATE TABLE IF NOT EXISTS City (
+    id INT NOT NULL AUTO_INCREMENT,
+    cityName VARCHAR(50) NOT NULL UNIQUE,
+    stateID INT NOT NULL,
+    PRIMARY KEY (id),
+    FOREIGN KEY (stateID) REFERENCES State(id)
+);
+
+CREATE TABLE IF NOT EXISTS Suburb (
+    id INT NOT NULL AUTO_INCREMENT,
+    suburbName VARCHAR(100) NOT NULL UNIQUE,
+    cityID INT NOT NULL,
+    PRIMARY KEY (id),
+    FOREIGN KEY (cityID) REFERENCES City(id)
+);
+
+CREATE TABLE IF NOT EXISTS Point (
+    id INT NOT NULL AUTO_INCREMENT,
+    pointLAT FLOAT,
+    pointLNG FLOAT,
+    pointStreetName VARCHAR(100),
+    pointHouseNumber VARCHAR(20),
+    pointPostalCode VARCHAR(20),
+    suburbID INT(11) NOT NULL,
+    PRIMARY KEY (id),
+    FOREIGN KEY (suburbID) REFERENCES Suburb(id)
+);

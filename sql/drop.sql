@@ -1,0 +1,5 @@
+DROP TABLE Point;
+DROP TABLE Suburb;
+DROP TABLE City;
+DROP TABLE State;
+DROP TABLE Country;
