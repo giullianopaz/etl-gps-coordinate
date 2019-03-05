@@ -36,7 +36,7 @@ e os demais subsistemas, como `extract.py`, `transform.py` e `load.py`.
 
 Para executar o ETL é preciso ter o MySQL instalado, além dos módulos em `requeriments.txt`. Não esqueça de dar uma olhada em `settings.py`.
 
-### 1 - Instaçar MySQL
+### 1 - Instalar MySQL
     $ sudo apt install mysql-server mysql-client
     $ sudo apt install libmysqlclient-dev
 
@@ -78,3 +78,9 @@ Você também pode limitar a quantidade de linhas e colunas a serem retornadas.
     $ python3 main.py -v 1 -mr 10 -mc 10
     ou
     $ python3 main.py --visualize 1 --maxrows 10 --maxcolumns 10
+    
+Você pode executar todo o processo de uma só vez.
+
+    $ python3 main.py -H localhost -U root -P toor -D etl -p data_points -dt 1 -ct 1 -ld 1 -v 1 -mr 10 -mc 10 -c 100
+    ou
+    $ python3 main.py --host localhost --user root --password toor --database etl --path data_points --droptables 1 --createtables 1 --loaddata 1 --visualize 1 --maxrows 10 --maxcolumns 10 --commit 100
