@@ -29,7 +29,7 @@ e os demais subsistemas, como `extract.py`, `transform.py` e `load.py`.
 
 - **sql/**: diretório com scripts SQL para criação, deleção e seleção;
 
-- **ata_points/**: diretório que contém os arquivos de texto contendo as coordenadas brutas (não tratadas).
+- **data_points/**: diretório que contém os arquivos de texto contendo as coordenadas brutas (não tratadas).
 
 
 ## Como executar:
