@@ -12,24 +12,24 @@ Este projeto usou FAÇADE como Padrão de Projeto Estrutural.
 Neste projeto a classe `ETL` age como a camada intermediária entre a `main.py`
 e os demais subsistemas, como `extract.py`, `transform.py` e `load.py`.
 
-- *settings.py*: arquivo de configuração. Seus valores podem ser mudados diretamente ou por intermédio de argumentos;
+- **settings.py**: arquivo de configuração. Seus valores podem ser mudados diretamente ou por intermédio de argumentos;
 
-- *main.py*: arquivo principal responsável por receber as configurações, argumentos e executar as ações;
+- **main.py**: arquivo principal responsável por receber as configurações, argumentos e executar as ações;
 
-- *etl.py*: arquivo que contém a classe ETL, responsável por fazer a interface entre a `main` e os subsistemas responsáveis por executar as rotinas ETL;
+- **etl.py**: arquivo que contém a classe ETL, responsável por fazer a interface entre a `main` e os subsistemas responsáveis por executar as rotinas ETL;
 
-- *extract.py*: scripts responsáveis por realizar a extração de dados de arquivos e API;
+- **extract.py**: scripts responsáveis por realizar a extração de dados de arquivos e API;
 
-- *transform.py*: scripts responsáveis por realizar a normalização, transformação e formatação dos dados brutos obtidos através de arquivos e API;
+- **transform.py**: scripts responsáveis por realizar a normalização, transformação e formatação dos dados brutos obtidos através de arquivos e API;
 
-- *load.py*: arquivos que contém a classe Model responsável por se comunicar com o SGBD, neste caso, MySQL;
+- **load.py**: arquivos que contém a classe Model responsável por se comunicar com o SGBD, neste caso, MySQL;
 
-- *requirements.txt*: arquivo com a lista de módulos necessários para a execução deste programa;
+- **requirements.txt**: arquivo com a lista de módulos necessários para a execução deste programa;
     $ pip freeze > requirements.txt
 
-- *sql/*: diretório com scripts SQL para criação, deleção e seleção;
+- **sql/**: diretório com scripts SQL para criação, deleção e seleção;
 
-- *data_points/*: diretório que contém os arquivos de texto contendo as coordenadas brutas (não tratadas).
+- **ata_points/**: diretório que contém os arquivos de texto contendo as coordenadas brutas (não tratadas).
 
 
 ## Como executar:
